@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_rename": 1,
+ "creation": "2025-05-27 09:33:21.477340",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "feedback_form_section",
+  "customer_remark",
+  "rating",
+  "feedback_details",
+  "task_type_id",
+  "type"
+ ],
+ "fields": [
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "in_list_view": 1,
+   "label": "Rating",
+   "reqd": 1
+  },
+  {
+   "fieldname": "feedback_details",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Feedback Details",
+   "reqd": 1
+  },
+  {
+   "fieldname": "feedback_form_section",
+   "fieldtype": "Section Break",
+   "label": "Feedback Form"
+  },
+  {
+   "fieldname": "customer_remark",
+   "fieldtype": "Small Text",
+   "label": "Customer Remark"
+  },
+  {
+   "fieldname": "task_type_id",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Task Type Id",
+   "options": "Preventive Maintenance Task"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "type"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-06-09 15:32:35.594107",
+ "modified_by": "da.1@yopmail.com",
+ "module": "checktrack_connector",
+ "name": "Feedback Form",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

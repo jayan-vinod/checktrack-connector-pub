@@ -1,7 +1,7 @@
 [project]
 name = "checktrack_connector"
 authors = [
-    { name = "satat tech llp", email = "mihir.patel@team.satat.tech"}
+    { name = "satat tech llp", email = "app_support@satat.tech"}
 ]
 description = "This app will be medium of communication between checktrack app and frappe app while they both will be isolated from each other."
 requires-python = ">=3.10"

@@ -1,0 +1,91 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-04-29 10:25:45.755405",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "workflow_status",
+  "color",
+  "visible_fields",
+  "required_fields",
+  "read_only_fields",
+  "workflow_status_change_to",
+  "start_state",
+  "working_state",
+  "end_state"
+ ],
+ "fields": [
+  {
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "in_list_view": 1,
+   "label": "Color"
+  },
+  {
+   "fieldname": "visible_fields",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Visible Fields"
+  },
+  {
+   "fieldname": "required_fields",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Required Fields"
+  },
+  {
+   "fieldname": "read_only_fields",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Read Only Fields"
+  },
+  {
+   "fieldname": "workflow_status_change_to",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Workflow Status Change To"
+  },
+  {
+   "fieldname": "workflow_status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Workflow Status"
+  },
+  {
+   "default": "0",
+   "fieldname": "end_state",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "End State"
+  },
+  {
+   "default": "0",
+   "fieldname": "start_state",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Start State"
+  },
+  {
+   "default": "0",
+   "fieldname": "working_state",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Working State"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-24 10:53:50.210136",
+ "modified_by": "Administrator",
+ "module": "checktrack_connector",
+ "name": "CT Status Flow Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

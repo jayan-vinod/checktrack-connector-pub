@@ -1,9 +1,14 @@
+from frappe import conf
 app_name = "checktrack_connector"
 app_title = "checktrack_connector"
 app_publisher = "satat tech llp"
 app_description = "This app will be medium of communication between checktrack app and frappe app while they both will be isolated from each other."
-app_email = "mihir.patel@team.satat.tech"
+app_email = "app_support@satat.tech"
 app_license = "mit"
+
+# Define API URLs as hooks
+user_api_url = conf.get("user_api_url")
+data_api_url = conf.get("data_api_url")
 
 # Apps
 # ------------------
@@ -121,24 +126,17 @@ app_license = "mit"
 # Permissions evaluated in scripted ways
 
 # permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
+# 	"Task": "checktrack_connector.checktrack_connector.doctype.task.task.get_permission_query_conditions",
 # }
-#
+
 # has_permission = {
-# 	"Event": "frappe.desk.doctype.event.event.has_permission",
+# 	"Task": "checktrack_connector.checktrack_connector.doctype.task.task.has_permission",
 # }
 
 # Document Events
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
 
 # Scheduled Tasks
 # ---------------
@@ -172,6 +170,45 @@ app_license = "mit"
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "checktrack_connector.event.get_events"
 # }
+
+doc_events = {
+    "*": {
+        "before_request": "checktrack_connector.middleware.validate_jwt_token"
+    },
+     "Demo PM Task": {
+        "on_save": "checktrack_connector.doctype.demo_pm_task.demo_pm_task.on_update",
+    },
+    "Task": {
+       "on_update": "checktrack_connector.sync.sync_or_update_task_in_mongo",
+       "on_submit": "checktrack_connector.sync.handle_task_submit",
+       "on_cancel": "checktrack_connector.sync.handle_task_cancel"
+    },
+    "Project": {
+       "on_update": "checktrack_connector.sync.sync_or_update_project_in_mongo"
+    },
+    "*": {
+        "on_request": "checktrack_connector.utils.validate_cors",
+    },
+    "Maintenance Schedule": {
+        "on_submit": [
+           "checktrack_connector.checktrack_connector.doctype.maintenance_schedule.maintenance_schedule.create_schedule_logs",
+        ]
+    },
+    "User": {
+        "after_insert": "checktrack_connector.user.generate_api_credentials"
+    },
+    "Address": {
+        "on_update": "checktrack_connector.hook.address_hooks.update_customer_primary_address"
+    }
+}
+
+override_whitelisted_methods = {
+    "frappe.utils.handle_preflight": "checktrack_connector.utils.handle_preflight",
+}
+
+after_request = ["checktrack_connector.utils.add_cors_headers"]
+
+
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
@@ -191,7 +228,7 @@ app_license = "mit"
 
 # Request Events
 # ----------------
-# before_request = ["checktrack_connector.utils.before_request"]
+# before_request = ["checktrack_connector.jwt_middleware.authenticate_jwt_token"]
 # after_request = ["checktrack_connector.utils.after_request"]
 
 # Job Events

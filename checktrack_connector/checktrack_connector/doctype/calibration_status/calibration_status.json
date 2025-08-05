@@ -1,0 +1,59 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-04-10 09:36:15.776203",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "stdsol",
+  "concentrationmgl_or_ppm",
+  "areaspan",
+  "calibration_curve",
+  "offline_result"
+ ],
+ "fields": [
+  {
+   "fieldname": "stdsol",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "STD.SOL"
+  },
+  {
+   "fieldname": "concentrationmgl_or_ppm",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Concentration(mg/l or ppm)"
+  },
+  {
+   "fieldname": "areaspan",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Area/Span"
+  },
+  {
+   "fieldname": "calibration_curve",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Calibration Curve"
+  },
+  {
+   "fieldname": "offline_result",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Offline Result"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-06-10 10:56:59.937052",
+ "modified_by": "Administrator",
+ "module": "checktrack_connector",
+ "name": "Calibration Status",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,185 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2013-02-22 01:28:05",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "serial_no",
+  "item_code",
+  "item_name",
+  "description",
+  "column_break_4",
+  "start_date",
+  "end_date",
+  "periodicity",
+  "schedule_details",
+  "no_of_visits",
+  "customer",
+  "customer_name",
+  "customer_email_id",
+  "column_break_10",
+  "sales_person",
+  "employee_id",
+  "employee_name"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fetch_from": "serial_no.item_code",
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "oldfieldname": "item_code",
+   "oldfieldtype": "Link",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "serial_no.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Item Name",
+   "oldfieldname": "item_name",
+   "oldfieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "item_code.description",
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description",
+   "oldfieldname": "description",
+   "oldfieldtype": "Data",
+   "print_width": "300px",
+   "read_only": 1,
+   "width": "300px"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 2,
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "oldfieldname": "start_date",
+   "oldfieldtype": "Date",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "oldfieldname": "end_date",
+   "oldfieldtype": "Date",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "periodicity",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Periodicity",
+   "oldfieldname": "periodicity",
+   "oldfieldtype": "Select",
+   "options": "\nWeekly\nMonthly\nQuarterly\nHalf Yearly\nYearly\nRandom"
+  },
+  {
+   "fieldname": "schedule_details",
+   "fieldtype": "Section Break"
+  },
+  {
+   "columns": 1,
+   "fieldname": "no_of_visits",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "No of Visits",
+   "oldfieldname": "no_of_visits",
+   "oldfieldtype": "Int",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "oldfieldname": "incharge_name",
+   "oldfieldtype": "Link",
+   "options": "Sales Person"
+  },
+  {
+   "fetch_from": "customer_name.email_id",
+   "fieldname": "customer_email_id",
+   "fieldtype": "Data",
+   "label": "Customer Email ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "serial_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Serial No",
+   "no_copy": 1,
+   "options": "Customer Items",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "label": "Employee ID",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee_id.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Employee Name"
+  }
+ ],
+ "idx": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-05-26 10:16:29.563608",
+ "modified_by": "Administrator",
+ "module": "checktrack_connector",
+ "name": "Maintenance Schedule Item",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

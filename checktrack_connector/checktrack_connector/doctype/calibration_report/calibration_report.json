@@ -1,0 +1,142 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CC-{####}",
+ "creation": "2025-04-09 09:48:40.438031",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_id",
+  "customer_name",
+  "customer_email",
+  "item_id",
+  "instrument",
+  "serial_no",
+  "model",
+  "calibration_std_used",
+  "parameters",
+  "criteria",
+  "result",
+  "date_of_calibration",
+  "due_date_of_calibration"
+ ],
+ "fields": [
+  {
+   "fetch_from": "customer_id.customer_name",
+   "fetch_if_empty": 1,
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "item_id.item_name",
+   "fieldname": "instrument",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Instrument",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "item_id.model",
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model"
+  },
+  {
+   "fetch_from": "item_id.serial_no",
+   "fieldname": "serial_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Serial No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "calibration_std_used",
+   "fieldtype": "Small Text",
+   "label": "Calibration Std Used "
+  },
+  {
+   "fieldname": "parameters",
+   "fieldtype": "Table",
+   "label": "Parameters",
+   "options": "Calibration Parameter"
+  },
+  {
+   "default": "The percentage of Variation must be <= +/- 5% of the Full-scale range.",
+   "fieldname": "criteria",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Criteria",
+   "read_only": 1
+  },
+  {
+   "fieldname": "result",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Result "
+  },
+  {
+   "fieldname": "date_of_calibration",
+   "fieldtype": "Date",
+   "label": "Date of Calibration"
+  },
+  {
+   "fieldname": "due_date_of_calibration",
+   "fieldtype": "Date",
+   "label": "Due Date of Calibration"
+  },
+  {
+   "fetch_from": "customer_id.customer_email",
+   "fetch_if_empty": 1,
+   "fieldname": "customer_email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_id",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Customer ID",
+   "options": "Customer",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "item_id",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Item ID",
+   "options": "Customer Items",
+   "set_only_once": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-06-06 13:42:12.491442",
+ "modified_by": "Administrator",
+ "module": "checktrack_connector",
+ "name": "Calibration Report",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

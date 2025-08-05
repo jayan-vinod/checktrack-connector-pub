@@ -1,0 +1,372 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PM-{####}",
+ "creation": "2025-06-06 14:02:58.041618",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_section",
+  "csr_no",
+  "customer_id",
+  "item_id",
+  "customer_name",
+  "address",
+  "zip_code",
+  "status_of_call",
+  "date",
+  "instruction_from",
+  "instruction_date",
+  "nature_of_problem_section",
+  "detail_problem_reported",
+  "system_down",
+  "equipment_type",
+  "make",
+  "model",
+  "serial_no",
+  "location_of_installation",
+  "online_result_section",
+  "before_pm",
+  "column_break_gcrv",
+  "after_pm",
+  "service_details_section",
+  "defects_fount_on_inspection",
+  "preventive_maintenance_checklist_replaced_cleaned",
+  "preventive_maintenance_checklist_replaced_purged",
+  "preventive_maintenance_checklist_ok_notok",
+  "status_after_service",
+  "service_enginners_sign",
+  "start_of_service",
+  "end_of_service",
+  "ups_supply_voltage_and_earthing_voltage_section",
+  "p_n_voltage",
+  "e_n_voltage",
+  "p_e_voltage",
+  "calibration_details_section",
+  "recommended",
+  "column_break_hmxm",
+  "spares_available_with_customer",
+  "calibration_status_section",
+  "calibration_table",
+  "customer_feedback_section",
+  "remarks",
+  "name1",
+  "designation",
+  "phone",
+  "email",
+  "signature",
+  "date_of_feedback",
+  "place"
+ ],
+ "fields": [
+  {
+   "fieldname": "csr_no",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "CSR No"
+  },
+  {
+   "fieldname": "customer_section",
+   "fieldtype": "Section Break",
+   "label": "Customer"
+  },
+  {
+   "fetch_from": "customer_id.customer_name",
+   "fetch_if_empty": 1,
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fetch_from": "customer_id.primary_address",
+   "fetch_if_empty": 1,
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fetch_from": "customer_id.zipcode",
+   "fetch_if_empty": 1,
+   "fieldname": "zip_code",
+   "fieldtype": "Int",
+   "label": "Zip Code"
+  },
+  {
+   "default": "AMC",
+   "fieldname": "status_of_call",
+   "fieldtype": "Select",
+   "label": "Status of Call",
+   "options": "WARRANTY\nAMC"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "instruction_from",
+   "fieldtype": "Data",
+   "label": "Instruction From"
+  },
+  {
+   "fieldname": "instruction_date",
+   "fieldtype": "Date",
+   "label": "Instruction Date"
+  },
+  {
+   "fieldname": "nature_of_problem_section",
+   "fieldtype": "Section Break",
+   "label": "Nature Of Problem"
+  },
+  {
+   "fieldname": "detail_problem_reported",
+   "fieldtype": "Small Text",
+   "label": "Detail Problem Reported"
+  },
+  {
+   "fieldname": "system_down",
+   "fieldtype": "Select",
+   "label": "System Down",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "equipment_type",
+   "fieldtype": "Data",
+   "label": "Equipment Type"
+  },
+  {
+   "fetch_from": "item_id.make",
+   "fieldname": "make",
+   "fieldtype": "Data",
+   "label": "Make"
+  },
+  {
+   "fetch_from": "item_id.model",
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Model"
+  },
+  {
+   "fetch_from": "item_id.serial_no",
+   "fieldname": "serial_no",
+   "fieldtype": "Data",
+   "label": "Serial No"
+  },
+  {
+   "fieldname": "location_of_installation",
+   "fieldtype": "Data",
+   "label": "Location of Installation"
+  },
+  {
+   "fieldname": "online_result_section",
+   "fieldtype": "Section Break",
+   "label": "Online Result"
+  },
+  {
+   "fieldname": "column_break_gcrv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_details_section",
+   "fieldtype": "Section Break",
+   "label": "Service Details"
+  },
+  {
+   "fieldname": "defects_fount_on_inspection",
+   "fieldtype": "Small Text",
+   "label": "Defects Fount on Inspection"
+  },
+  {
+   "fieldname": "status_after_service",
+   "fieldtype": "Select",
+   "label": "Status After Service",
+   "options": "COMPLETE\nINCOMPLETE\nPENDING FOR SPARES\nUNDER OBSERVATION\nWORKING"
+  },
+  {
+   "fieldname": "service_enginners_sign",
+   "fieldtype": "Signature",
+   "label": "Service Enginner's Sign"
+  },
+  {
+   "fieldname": "start_of_service",
+   "fieldtype": "Date",
+   "label": "Start of Service"
+  },
+  {
+   "fieldname": "end_of_service",
+   "fieldtype": "Date",
+   "label": "End of Service"
+  },
+  {
+   "fieldname": "calibration_details_section",
+   "fieldtype": "Section Break",
+   "label": "Spare Details"
+  },
+  {
+   "fieldname": "recommended",
+   "fieldtype": "Small Text",
+   "label": "Recommended"
+  },
+  {
+   "fieldname": "spares_available_with_customer",
+   "fieldtype": "Small Text",
+   "label": "Spares Available with Customer"
+  },
+  {
+   "fieldname": "column_break_hmxm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_feedback_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Feedback"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fetch_from": "customer_id.customer_name",
+   "fetch_if_empty": 1,
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fetch_from": "customer_id.customer_phone",
+   "fetch_if_empty": 1,
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "label": "Phone"
+  },
+  {
+   "fetch_from": "customer_id.customer_email",
+   "fetch_if_empty": 1,
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "signature",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "date_of_feedback",
+   "fieldtype": "Date",
+   "label": "Date of Feedback"
+  },
+  {
+   "fieldname": "place",
+   "fieldtype": "Data",
+   "label": "Place"
+  },
+  {
+   "fieldname": "calibration_table",
+   "fieldtype": "Table",
+   "label": "Calibration Status Table",
+   "options": "Calibration Status"
+  },
+  {
+   "fieldname": "ups_supply_voltage_and_earthing_voltage_section",
+   "fieldtype": "Section Break",
+   "label": "UPS supply voltage and Earthing voltage"
+  },
+  {
+   "fieldname": "p_n_voltage",
+   "fieldtype": "Float",
+   "label": "P to N (P&N)"
+  },
+  {
+   "fieldname": "e_n_voltage",
+   "fieldtype": "Float",
+   "label": "E to N (E&N)"
+  },
+  {
+   "fieldname": "p_e_voltage",
+   "fieldtype": "Float",
+   "label": "P to E (P&E)"
+  },
+  {
+   "fieldname": "customer_id",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Customer ID",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "item_id",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Item ID",
+   "options": "Customer Items"
+  },
+  {
+   "fieldname": "before_pm",
+   "fieldtype": "Float",
+   "label": "Before Preventive Maintenance (mg/L)"
+  },
+  {
+   "fieldname": "after_pm",
+   "fieldtype": "Float",
+   "label": "After Preventive Maintenance (mg/L)"
+  },
+  {
+   "fieldname": "calibration_status_section",
+   "fieldtype": "Section Break",
+   "label": "Calibration Status"
+  },
+  {
+   "fieldname": "preventive_maintenance_checklist_replaced_cleaned",
+   "fieldtype": "Table",
+   "label": "Preventive Maintenance Checklist Replaced / Cleaned",
+   "options": "Preventive Maintenance Checklist Replaced Cleaned Table"
+  },
+  {
+   "fieldname": "preventive_maintenance_checklist_replaced_purged",
+   "fieldtype": "Table",
+   "label": "Preventive Maintenance Checklist Replaced / Purged",
+   "options": "Preventive Maintenance Checklist Replaced Purged Table"
+  },
+  {
+   "fieldname": "preventive_maintenance_checklist_ok_notok",
+   "fieldtype": "Table",
+   "label": "Preventive Maintenance Checklist Ok / Not Ok",
+   "options": "Preventive Maintenance Checklist Ok NotOk Table"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-01 12:13:35.680258",
+ "modified_by": "mz123@yopmail.com",
+ "module": "checktrack_connector",
+ "name": "Preventive Maintenance Report",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

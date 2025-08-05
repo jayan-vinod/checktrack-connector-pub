@@ -1,0 +1,142 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-04-29 09:15:04.799019",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_hhk8",
+  "amended_from",
+  "task",
+  "workflow_status",
+  "customer",
+  "customer_email",
+  "item",
+  "calibration_certificate",
+  "pm_report",
+  "service_report",
+  "completion_date",
+  "cancellation_reason",
+  "feedback"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_hhk8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Preventive Maintenance Task",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "workflow_status",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Workflow Status"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "calibration_certificate",
+   "fieldtype": "Link",
+   "label": "Calibration Certificate",
+   "link_filters": "[[\"Calibration Report\", \"model\", \"=\", \"__null__\"]] ",
+   "options": "Calibration Report"
+  },
+  {
+   "fieldname": "pm_report",
+   "fieldtype": "Link",
+   "label": "PM Report",
+   "link_filters": "[[\"Preventive Maintenance Report\", \"csr_no\", \"=\", \"__null__\"]]",
+   "options": "Preventive Maintenance Report"
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Date",
+   "label": "Completion Date"
+  },
+  {
+   "fieldname": "cancellation_reason",
+   "fieldtype": "Small Text",
+   "label": "Cancellation Reason"
+  },
+  {
+   "fieldname": "service_report",
+   "fieldtype": "Link",
+   "label": "Service Report",
+   "link_filters": "[[\"Service Report\", \"csr_no\", \"=\", \"__null__\"]]",
+   "options": "Service Report"
+  },
+  {
+   "fetch_from": "customer.customer_email",
+   "fieldname": "customer_email",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Customer Email",
+   "options": "Email"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "feedback",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Feedback",
+   "options": "Feedback Form"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "link_filters": "[[\"Customer Items\", \"customer\", \"=\", \"eval:doc.customer\"]]",
+   "options": "Customer Items",
+   "reqd": 1
+  },
+  {
+   "fieldname": "task",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Task"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-06-16 16:50:21.374821",
+ "modified_by": "Administrator",
+ "module": "checktrack_connector",
+ "name": "Preventive Maintenance Task",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

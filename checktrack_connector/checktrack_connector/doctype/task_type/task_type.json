@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:task_type",
+ "creation": "2025-04-29 09:54:40.843315",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "task_type",
+  "status_flow",
+  "field_mapping"
+ ],
+ "fields": [
+  {
+   "fieldname": "task_type",
+   "fieldtype": "Link",
+   "label": "Task Type",
+   "options": "DocType",
+   "unique": 1
+  },
+  {
+   "fieldname": "status_flow",
+   "fieldtype": "Table",
+   "label": "Status Flow",
+   "options": "CT Status Flow Table"
+  },
+  {
+   "fieldname": "field_mapping",
+   "fieldtype": "Table",
+   "label": "Field Mapping",
+   "options": "CT Field Mapping Table"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-06-02 14:33:04.968459",
+ "modified_by": "Administrator",
+ "module": "checktrack_connector",
+ "name": "Task Type",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
