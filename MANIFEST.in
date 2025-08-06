@@ -1,0 +1,9 @@
+include README.md
+include requirements.txt
+recursive-include checktrack_connector *.json *.txt *.md *.py
+recursive-include checktrack_connector/public *
+recursive-include checktrack_connector/config *
+recursive-include checktrack_connector/templates *
+recursive-include checktrack_connector/doctype *
+recursive-include checktrack_connector/patches *
+recursive-include checktrack_connector/modules.txt
